@@ -1,0 +1,7 @@
+cnga2016/theme/theme/bower_components
+cnga2016/theme/theme/node_modules
+cnga2016/theme.egg-info
+*.egg-info
+*.pyc
+build/
+*~
