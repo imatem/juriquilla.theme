@@ -7,7 +7,7 @@ from setuptools import setup
 version = '1.0dev0'
 
 setup(
-    name='jurilla.theme',
+    name='juriquilla.theme',
     version=version,
     description="Theme Package for campus Juriquilla",
     long_description="",
@@ -35,6 +35,11 @@ setup(
       'plone.app.theming',
       'z3c.jbot',
     ],
+    extras_require={
+        'test': [
+            'plone.app.testing',
+        ],
+    },
     entry_points="""
     # -*- Entry points: -*-
     [z3c.autoinclude.plugin]
