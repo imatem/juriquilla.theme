@@ -1,0 +1,13 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns": ["bin", "develop-eggs", "parts", "var"],
+            "follow_symlinks": true,
+        },
+    ],
+    "settings": {
+        "python_interpreter": "/usr/local/bin/python2.7",
+    }
+}
