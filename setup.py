@@ -33,6 +33,7 @@ setup(
     install_requires=[
       'setuptools',
       'plone.app.theming',
+      'plone.app.themingplugins'
       'z3c.jbot',
     ],
     extras_require={
