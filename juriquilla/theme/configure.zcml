@@ -7,6 +7,12 @@
     i18n_domain="juriquilla.theme">
 
   <include package="plone.app.theming" />
+  <include package=".browser" />
+
+  <!-- <subscriber
+      for="collective.lineage.interfaces.IChildSite
+           zope.traversing.interfaces.IBeforeTraverseEvent"
+      handler=".subscriber.apply_juriquilla_layer" /> -->
 
   <plone:static
     name="juriquilla.theme"
