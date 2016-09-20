@@ -1,157 +1,68 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
-<!-- <h2 metal:define-macro="title"
-    tal:define="collview context/@@collage_kss_helper"
-    tal:attributes="id string:title-${collview/getUniqueIdentifier};
-                    class python: collview.getKssClasses('title')"
-    tal:condition="here/Title">
-  <span metal:define-slot="inside"
-        tal:replace="here/Title">title</span>
-</h2>
+<!-- collage link_standard.pt -->
 
-<p>
-  <span metal:define-macro="description"
-        tal:define="collview context/@@collage_kss_helper"
-        tal:attributes="id string:description-${collview/getUniqueIdentifier};
-                        class python: collview.getKssClasses('description')"
-        tal:condition="here/Description">
-    <span metal:define-slot="inside"
-          tal:replace="here/Description">description</span>
-  </span>
-</p> -->
+<style type="text/css">
+  .text-danger{
+    background-color: #FF0000;
+    color:#FFFFFF;
+    text-transform: lowercase;
+  }
+  .oaxheader-color{
+    background-color: #F17C06;
+  }
 
-<!-- <p>
-  <span i18n:domain="plone" i18n:translate="link_address">The link address is:</span>
-  <a href="#" tal:attributes="href here/remote_url"
-     tal:content="here/remote_url">remote url</a>
-</p> -->
+  .cuerheader-color{
+    background-color: #75ad0a;
+  }
+
+</style>
+
+<tal:block tal:define="cstyle view/cstyle;
+          titlesection view/sectitle;">
 
 <span tal:condition="view/hasFeed">
-          <br/>
-          <h3 style="background-color: #F17C06; ; width: 17em;">
-            <font color="#FFFFFF">&nbsp; Oaxaca</font>  &nbsp;</h3>
-        </span>
+  <br/>
+  <h3 style="width: 17em;" tal:attributes="class cstyle">
+    <font color="#FFFFFF">&nbsp; <span tal:content="titlesection"/></font>  &nbsp;</h3>
+</span>
 
 <tal:entry tal:condition="view/feedAvailable"
-          tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
-          tal:repeat="item view/items">
-          <div class="tileItem">
-            <metal:block>
-              <dt>
-                <span>
-                  <span style="background-color: #F17C06">
-                    <font color="#FFFFFF">&nbsp;</font>  &nbsp;</span>
-                </span>
-                <span class="summary">
-
-                  <a tal:define="mtitle item/title" style="background: none; padding: 0; border: none !important" href="#" tal:attributes="href item/url">
-                    <span tal:replace="structure mtitle"/>
-                  </a>
-                  <br/>
-                </span>
-              </dt>
-              <dd>
-                <span tal:condition="item/institution">
-                  <b>
-                    <span tal:condition="item/speaker" tal:content="item/speaker"/>
-                    <span tal:condition="item/institution" tal:content="python:' (' + item['institution'] + ').'"/>
-                  </b>
-                </span>
-                <span tal:condition="python: not item['institution']">
-                  <b><span tal:condition="item/speaker" tal:content="item/speaker"/></b>
-                </span>
-                <br/>
-                <span tal:content="python: view.getFancyDate(item['updated']) or ''"/>
-                <span tal:content="item/location | nothing"/>
-                <br/>
-                <span tal:content="item/seminarytitle | nothing"/>
-                <br/>
-              </dd>
-            </metal:block>
-          </div>
-        </tal:entry>
-
-
-<!-- <tal:manager replace="structure provider:collage.ContentManager" />
-
-  <style type="text/css">
-    .text-danger{
-            background-color: #FF0000;
-            color:#FFFFFF;
-            text-transform: lowercase;
-        }
-  </style>
-
-<tal:variables define="plone_view here/@@plone;
-                       toLocalizedTime nocall: plone_view/toLocalizedTime;
-                       isAnon view/isAnon;
-                       mtool view/mtool;
-                       portal_url view/portal_url;
-                       normalizeString view/normalizeString;
-                       site_properties view/site_properties">
-
-  <div class="standard-topic"
-       tal:define="topicContents view/getContents;
-       folderContents python:view.filterTopics(topicContents);">
-
-    <tal:listing i18n:domain="plone"
-                 define="myview context/@@collage_kss_helper/getKssView;
-                         getKssClasses python: myview.getKssClasses;
-                         templateId string:folder_summary_view;
-                         month_name python:{'Jan.': 'Enero', 'Feb.':'Febrero', 'Mar.':'Marzo', 'Apr.':'Abril', 'May':'Mayo', 'June':'Junio', 'July':'Julio', 'Aug.':'Agosto', 'Sep.':'Septiembre', 'Oct.':'Octubre', 'Nov.':'Noviembre', 'Dec.':'Diciembre'};
-                         ">
-        <span tal:condition="view/hasFeed">
-          <br/>
-          <h3 style="background-color: #F17C06; ; width: 17em;">
-            <font color="#FFFFFF">&nbsp; Oaxaca</font>  &nbsp;</h3>
+      tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+      tal:repeat="item view/items">
+  <div class="tileItem">
+    <metal:block>
+      <dt>
+        <span>
+          <span tal:attributes="class cstyle">
+            <font color="#FFFFFF">&nbsp;</font>  &nbsp;</span>
         </span>
+        <span class="summary">
 
-        <tal:entry tal:condition="view/feedAvailable"
-          tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
-          tal:repeat="item view/items">
-          <div class="tileItem">
-            <metal:block>
-              <dt>
-                <span>
-                  <span style="background-color: #F17C06">
-                    <font color="#FFFFFF">&nbsp;</font>  &nbsp;</span>
-                </span>
-                <span class="summary">
-
-                  <a tal:define="mtitle item/title" style="background: none; padding: 0; border: none !important" href="#" tal:attributes="href item/url">
-                    <span tal:replace="structure mtitle"/>
-                  </a>
-                  <br/>
-                </span>
-              </dt>
-              <dd>
-                <span tal:condition="item/institution">
-                  <b>
-                    <span tal:condition="item/speaker" tal:content="item/speaker"/>
-                    <span tal:condition="item/institution" tal:content="python:' (' + item['institution'] + ').'"/>
-                  </b>
-                </span>
-                <span tal:condition="python: not item['institution']">
-                  <b><span tal:condition="item/speaker" tal:content="item/speaker"/></b>
-                </span>
-                <br/>
-                <span tal:content="python: view.getFancyDate(item['updated']) or ''"/>
-                <span tal:content="item/location | nothing"/>
-                <br/>
-                <span tal:content="item/seminarytitle | nothing"/>
-                <br/>
-              </dd>
-            </metal:block>
-          </div>
-        </tal:entry>
-
-
-
-
-    </tal:listing>
-
+          <a tal:define="mtitle item/title" style="background: none; padding: 0; border: none !important" href="#" tal:attributes="href item/url">
+            <span tal:replace="structure mtitle"/>
+          </a>
+          <br/>
+        </span>
+      </dt>
+      <dd>
+        <span tal:condition="item/institution">
+          <b>
+            <span tal:condition="item/speaker" tal:content="item/speaker"/>
+            <span tal:condition="item/institution" tal:content="python:' (' + item['institution'] + ').'"/>
+          </b>
+        </span>
+        <span tal:condition="python: not item['institution']">
+          <b><span tal:condition="item/speaker" tal:content="item/speaker"/></b>
+        </span>
+        <br/>
+        <span tal:content="python: view.getFancyDate(item['updated']) or ''"/>
+        <span tal:content="item/location | nothing"/>
+        <br/>
+        <span tal:content="item/seminarytitle | nothing"/>
+        <br/>
+      </dd>
+    </metal:block>
   </div>
-
-</tal:variables>
-
- -->
+</tal:entry>
+</tal:block>

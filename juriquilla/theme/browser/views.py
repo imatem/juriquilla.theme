@@ -189,6 +189,17 @@ class RSSTopicsView(BaseView):
 
         return datetime
 
+    def cstyle(self):
+        if 'oaxaca' in self.context.remote_url():
+            return 'oaxheader-color'
+
+        return 'cuerheader-color'
+
+    def sectitle(self):
+        if 'oaxaca' in self.context.remote_url():
+            return 'Oaxaca'
+
+        return 'Cuernavaca'
 
 class IMRSSFeed(RSSFeed):
     """an RSS feed"""

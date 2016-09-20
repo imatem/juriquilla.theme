@@ -1,19 +1,19 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
-  <style type="text/css">
-    .text-danger{
-            background-color: #FF0000;
-            color:#FFFFFF;
-            text-transform: lowercase;
-        }
-    .jurheader-color{
-      background-color: #944ADF;
-    }
+<style type="text/css">
+  .text-danger{
+          background-color: #FF0000;
+          color:#FFFFFF;
+          text-transform: lowercase;
+      }
+  .jurheader-color{
+    background-color: #944ADF;
+  }
 
-    .cuheader-color{
-      background-color: #4387fd;
-    }
-  </style>
+  .cuheader-color{
+    background-color: #4387fd;
+  }
+</style>
 
 <tal:variables define="plone_view here/@@plone;
                        toLocalizedTime nocall: plone_view/toLocalizedTime;
@@ -22,12 +22,8 @@
                        portal_url view/portal_url;
                        normalizeString view/normalizeString;
                        site_properties view/site_properties">
-
-<!-- folderContents python:view.filterTopics(topicContents); titlesection python:view.title(topicContents);-->
   <div class="standard-topic"
-       tal:define="topicContents view/getContents;
-
-          ">
+       tal:define="topicContents view/getContents;">
 
     <tal:listing i18n:domain="plone"
                  define="myview context/@@collage_kss_helper/getKssView;
@@ -39,7 +35,6 @@
       <dl tal:condition="topicContents" >
         <tal:block tal:define="cstyle python:view.cstyle(topicContents[0]);
           titlesection python:view.sectitle(topicContents[0]);">
-        <br/>
         <br/>
         <h3 style="width: 17em;" tal:attributes="class cstyle">
             <font color="#FFFFFF">&nbsp; <span tal:content="titlesection"/></font>  &nbsp;</h3>
