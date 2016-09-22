@@ -56,15 +56,10 @@ class IMSiteTopicView(BaseTopicView):
     #             cu.append(topic)
     #     return{'CU': cu, 'Juriquilla': juriquilla}
 
-    def cstyle(self, topic):
-        if 'Juriquilla' in topic.Subject:
+    def cstyle(self, ptitle):
+        if 'Juriquilla' == ptitle:
             return 'jurheader-color'
         return 'cuheader-color'
-
-    def sectitle(self, topic):
-        if 'Juriquilla' in topic.Subject:
-            return 'Juriquilla'
-        return 'Ciudad Universitaria'
 
 # class RSSTopicsView(BaseView):
 #     title = u'RSSlink_topics'
@@ -195,11 +190,6 @@ class RSSTopicsView(BaseView):
 
         return 'cuerheader-color'
 
-    def sectitle(self):
-        if 'oaxaca' in self.context.remote_url():
-            return 'Oaxaca'
-
-        return 'Cuernavaca'
 
 class IMRSSFeed(RSSFeed):
     """an RSS feed"""
