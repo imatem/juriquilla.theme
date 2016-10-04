@@ -8,7 +8,7 @@ Simples Consultoria - www.simplesconsultoria.com.br
 
 /* Background images - Remove this lines for a clean layout */
 /*body {background: url(header.png) top no-repeat;}*/
-body {background: linear-gradient(#A569BD, #d7e2e9);}
+body {background: linear-gradient(#FFFFFF, #FFFFFF);}
 #header {
 /*background: transparent url(logo-juriquillaB.png) top center no-repeat;*/
 background-size: 100% auto; 
@@ -57,25 +57,25 @@ padding: 1em 0;
 #portal-personaltools {font-size: 1.2em;}
 
 /* Main navigation */
-#nav {background: #94348c;	}
+#nav {background: #944ADF;	}
 
 #portal-globalnav{
-    background: #94348c
+    background: #944ADF
 }
 
 #portal-globalnav li a{
-    background:#94348c;
+    background:#944ADF;
 }
 
 
 #portal-globalnav li a:hover{
     background:#ffffff !important;
-    color: #94348c !important;
+    color: #944ADF !important;
 }
 
 
 #nav ul {
-background: #94348c;	
+background: #944ADF;
 color: #fff;
 font-size: 1.2em;
 border-bottom: 1px solid #FF9900;
@@ -95,6 +95,7 @@ display: inline-block;
 #portal-searchbox #searchGadget {border: 1px solid #F1F1F1;padding: 0.1em;}
 #searchGadget, #header input.searchButton {padding: 0.1em 0.2em;}
 #LSResult {z-index:1; margin-top: 0.5%;}
+
 
 
 /****************** CONTENT ******************/
@@ -119,7 +120,7 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {list-style: none;}
 
 /****************** FOOTER ******************/
 
-#footer {background: #94348c; color: #fff;}
+#footer {background: #944ADF; color: #fff;}
 #footer a:link {color:#fff;}
 #footer a:visited {color:#f1f1f1;}
 #footer a:hover {color: #f1f1f1 !important;}
