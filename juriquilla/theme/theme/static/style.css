@@ -8,7 +8,12 @@ Simples Consultoria - www.simplesconsultoria.com.br
 
 /* Background images - Remove this lines for a clean layout */
 /*body {background: url(header.png) top no-repeat;}*/
-body {background: linear-gradient(#FFFFFF, #FFFFFF);}
+/*
+#747474
+#D9D9D9
+#F7F7F7
+*/
+body {background: linear-gradient(#F0F8FF, #F7F7F7);}
 #header {
 /*background: transparent url(logo-juriquillaB.png) top center no-repeat;*/
 background-size: 100% auto; 
@@ -60,11 +65,13 @@ padding: 1em 0;
 #nav {background: #944ADF;	}
 
 #portal-globalnav{
-    background: #944ADF
+    background: #944ADF;
+    margin: 0 0 0 0;
 }
 
 #portal-globalnav li a{
     background:#944ADF;
+    padding: 1px 1em 1em;
 }
 
 
@@ -78,7 +85,7 @@ padding: 1em 0;
 background: #944ADF;
 color: #fff;
 font-size: 1.2em;
-border-bottom: 1px solid #FF9900;
+/*border-bottom: 1px solid #FF9900;*/
 }
 #nav a {
 color: #fff; 
