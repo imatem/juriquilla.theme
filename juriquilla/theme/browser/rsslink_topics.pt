@@ -15,12 +15,23 @@
   .cuerheader-color{
     background-color: #75ad0a;
   }
+  .oaxborder-color{
+    border: #F17C06;
+    border-style: solid;
+    padding-left: 1em;
+  }
+  .cuerborder-color{
+    border: #75ad0a;
+    border-style: solid;
+    padding-left: 1em;
+  }
 
 </style>
 
 <tal:block tal:define="cstyle view/cstyle;
-          titlesection here/Title | nothing;">
-
+          titlesection here/Title | nothing;
+          topic_style view/topicstyle;">
+<div tal:attributes="class topic_style">
 <!-- <span tal:condition="view/hasFeed"> -->
   <br/>
   <h3 style="width: 17em;" tal:attributes="class cstyle">
@@ -65,4 +76,5 @@
     </metal:block>
   </div>
 </tal:entry>
+</div>
 </tal:block>

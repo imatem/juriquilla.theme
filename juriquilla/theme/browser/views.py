@@ -61,6 +61,11 @@ class IMSiteTopicView(BaseTopicView):
             return 'jurheader-color'
         return 'cuheader-color'
 
+    def topicstyle(self, ptitle):
+        if 'Juriquilla' == ptitle:
+            return 'jurborder-color'
+        return 'cuborder-color'
+
 # class RSSTopicsView(BaseView):
 #     title = u'RSSlink_topics'
     # def filterTopics(self, topics):
@@ -189,6 +194,11 @@ class RSSTopicsView(BaseView):
             return 'oaxheader-color'
 
         return 'cuerheader-color'
+
+    def topicstyle(self):
+        if 'oaxaca' in self.context.remote_url():
+            return 'oaxborder-color'
+        return 'cuerborder-color'
 
 
 class IMRSSFeed(RSSFeed):

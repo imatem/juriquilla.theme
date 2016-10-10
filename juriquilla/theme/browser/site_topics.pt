@@ -13,6 +13,16 @@
   .cuheader-color{
     background-color: #4387fd;
   }
+  .jurborder-color{
+    border: #944ADF;
+    border-style: solid;
+    padding-left: 1em;
+  }
+  .cuborder-color{
+    border: #4387fd;
+    border-style: solid;
+    padding-left: 1em;
+  }
 </style>
 
 <tal:variables define="plone_view here/@@plone;
@@ -21,8 +31,10 @@
                        mtool view/mtool;
                        portal_url view/portal_url;
                        normalizeString view/normalizeString;
-                       site_properties view/site_properties">
-  <div class="standard-topic"
+                       site_properties view/site_properties;
+                       topic_title here/Title | nothing;
+                       topic_style python:view.topicstyle(topic_title);">
+  <div tal:attributes="class topic_style"
        tal:define="topicContents view/getContents;">
 
     <tal:listing i18n:domain="plone"
