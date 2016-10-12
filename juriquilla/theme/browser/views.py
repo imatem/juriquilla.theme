@@ -43,18 +43,6 @@ class UsersView(BrowserView):
 
 
 class IMSiteTopicView(BaseTopicView):
-    # def filterTopics(self, topics):
-
-    #     # import pdb; pdb.set_trace()
-    #     cu = []
-    #     juriquilla = []
-    #     for topic in topics:
-    #         subject = topic.Subject
-    #         if 'Juriquilla' in subject:
-    #             juriquilla.append(topic)
-    #         else:
-    #             cu.append(topic)
-    #     return{'CU': cu, 'Juriquilla': juriquilla}
 
     def cstyle(self, ptitle):
         if 'Juriquilla' == ptitle:
@@ -66,74 +54,9 @@ class IMSiteTopicView(BaseTopicView):
             return 'jurborder-color'
         return 'cuborder-color'
 
-# class RSSTopicsView(BaseView):
-#     title = u'RSSlink_topics'
-    # def filterTopics(self, topics):
-    #     return {}
-
-
-# class RssCuernavacaTopicView(BrowserView):
-class RssCuernavacaTopicView(BaseTopicView):
-
-    def __init__(self, context, request):
-        self.context = context
-        self.request = request
-        self.feed = IMRSSFeed('http://www.matcuer.unam.mx/RSS/', 100)
-        self.feed.update()
-
-    def filterTopics(self, topics):
-        return {}
-
-    @property
-    def feedAvailable(self):
-        """checks if the feed data is available"""
-        return self.feed
-
-    def hasFeed(self):
-        if self.items():
-            return True
-        return False
-
-    def items(self):
-
-        ritems = []
-        date = DateTime()
-        for item in self.feed.items:
-            if item.get('updated', ''):
-                if item['updated'] < date:
-                    continue
-                if item['updated'] >= date and item['updated'] <= date + 14:
-                    ritems.append(item)
-                elif item['updated']._hour + 1 >= date._hour and item['updated'] <= date + 14:
-                    ritems.append(item)
-        return ritems
-
-    def getFancyDate(self, date):
-        month_name = {
-            'Jan.': 'Enero',
-            'Feb.': 'Febrero',
-            'Mar.': 'Marzo',
-            'Apr.': 'Abril',
-            'May': 'Mayo',
-            'June': 'Junio',
-            'July': 'Julio',
-            'Aug.': 'Agosto',
-            'Sep.': 'Septiembre',
-            'Oct.': 'Octubre',
-            'Nov.': 'Noviembre',
-            'Dec.': 'Diciembre'
-        }
-
-        datetime = date and date.pCommon() or ''
-        if datetime:
-            date_s = datetime.split(' ')
-            return date_s[1].replace(',', '') + ' de ' + month_name[date_s[0]] + ', ' + date_s[3] + ' ' + date_s[4] + '.' or ''
-
-        return datetime
 
 class RSSTopicsView(BaseView):
     title = u'RSSlink_topics'
-# class RssOaxacaTopicView(RssCuernavacaTopicView):
 
     def __init__(self, context, request):
         self.context = context

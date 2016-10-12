@@ -53,24 +53,6 @@
         layer="Products.Collage.interfaces.ICollageBrowserLayer"
     />
 
-
-  <!-- <browser:page
-        name="rssview"
-        for="*"
-        permission="zope.Public"
-        template="rss_view.pt"
-        class=".rss_view.RSSView"
-    /> -->
-
-  <browser:page
-        name="rsscuernavaca_topics"
-        for="Products.ATContentTypes.content.topic.ATTopic"
-        permission="zope.Public"
-        template="rsscuernavaca_topics.pt"
-        class=".views.RssCuernavacaTopicView"
-        layer="Products.Collage.interfaces.ICollageBrowserLayer"
-    />
-
   <browser:page
         name="rsslink_topics"
         for="Products.ATContentTypes.content.link.ATLink"
