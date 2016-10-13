@@ -137,6 +137,30 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {list-style: none;}
 #portal-siteactions {text-align: left; display:inline;}
 
 
+/* border activities styles */
+.jurborder-color{
+    border: #944ADF;
+    border-style: solid;
+    padding-left: 1em;
+  }
+.cuborder-color{
+    border: #4387fd;
+    border-style: solid;
+    padding-left: 1em;
+  }
+
+.oaxborder-color{
+    border: #F17C06;
+    border-style: solid;
+    padding-left: 1em;
+  }
+.cuerborder-color{
+    border: #75ad0a;
+    border-style: solid;
+    padding-left: 1em;
+  }
+
+
 /****************** RESPONSIVE DESIGN MAGIC ******************/
 
 #searchbt, #nav #seletor {display:none;}
