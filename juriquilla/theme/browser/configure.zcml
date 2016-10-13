@@ -44,7 +44,7 @@
   />
 
 
-  <browser:page
+  <!-- <browser:page
         name="site_topics"
         for="Products.ATContentTypes.content.topic.ATTopic"
         permission="zope.Public"
@@ -60,7 +60,7 @@
         template="rsslink_topics.pt"
         class=".views.RSSTopicsView"
         layer="Products.Collage.interfaces.ICollageBrowserLayer"
-    />
+    /> -->
 
 
     <!--  -->
