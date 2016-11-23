@@ -12,8 +12,10 @@ Simples Consultoria - www.simplesconsultoria.com.br
 #747474
 #D9D9D9
 #F7F7F7
+#F6F5EA
 */
-body {background: linear-gradient(#F0F8FF, #F7F7F7);}
+/*body {background: linear-gradient(#F0F8FF, #F7F7F7);}*/
+body {background: linear-gradient(#F6F5EA, #F6F5EA);}
 #header {
 /*background: transparent url(logo-juriquillaB.png) top center no-repeat;*/
 background-size: 100% auto; 
@@ -29,6 +31,7 @@ color: #000000;
 font-family: Arial, Helvetica, sans-serif; 
 font-size: 62.5%; /* with this 1em = 10px */
 }
+/*a:link, #content a:link, dl.portlet a:link {color:#205C90;}*/
 a:link, #content a:link, dl.portlet a:link {color:#205C90;}
 #content a:visited, dl.portlet a:visited {color: #266DAB;}
 #content a:hover, dl.portlet a:hover {color: #12304D !important;}
@@ -62,7 +65,49 @@ padding: 1em 0;
 #portal-personaltools {font-size: 1.2em;}
 
 /* Main navigation */
-#nav {background: #944ADF;	}
+
+
+#nav {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #AC9CE1;
+}
+
+
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: center;
+    font-size: 1.1em;
+    background: #AC9CE1;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+
+#portal-globalnav li a{
+    border-right: 0px;
+    background: #AC9CE1;
+    color: #FFFFFF;
+    /*border-left:2px solid #944ADF;
+    border-right:2px solid #944ADF;*/
+}
+
+#portal-globalnav ul li a{
+    background-color: #AC9CE1;
+}
+
+
+#portal-globalnav .selected a, #portal-globalnav a:hover{
+    background-color: #944ADF !important;
+    color: white !important;
+}
+
+
+/*#nav {background: #944ADF;	}
 
 #portal-globalnav{
     background: #944ADF;
@@ -85,7 +130,6 @@ padding: 1em 0;
 background: #944ADF;
 color: #fff;
 font-size: 1.2em;
-/*border-bottom: 1px solid #FF9900;*/
 }
 #nav a {
 color: #fff; 
@@ -94,7 +138,7 @@ text-decoration: none;
 min-width: 3em; 
 display: inline-block;
 }
-#nav a:hover, #nav li.selected a {background: #ff9900;}
+#nav a:hover, #nav li.selected a {background: #ff9900;}*/
 
 
 /* Searchbox */
@@ -127,7 +171,7 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {list-style: none;}
 
 /****************** FOOTER ******************/
 
-#footer {background: #944ADF; color: #fff;}
+#footer {background: #AC9CE1; color: #fff;}
 #footer a:link {color:#fff;}
 #footer a:visited {color:#f1f1f1;}
 #footer a:hover {color: #f1f1f1 !important;}
@@ -258,3 +302,37 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {list-style: none;}
 #fieldsetlegend-categorization{
     display:none!important;
 }
+
+
+/*#collage .two-columns-equal .block_1 {
+    width: 80% !important;
+}
+
+#collage .two-columns-equal .block_2 {
+    width: 19% !important;
+}*/
+
+.galleria-info{
+    width:100% !important;
+    margin-top: -150px;
+}
+
+.galleria-info-text{
+    padding-bottom: 0px !important;
+}
+
+#galleria div.galleria-container{
+    margin-top: 150px;
+
+}
+
+div.galleria-image img{
+    position: absolute;
+}
+
+div.galleria-thumbnails img{
+    height: 100% !important;
+    width: 100% !important;
+    margin-top: 10%;
+}
+
