@@ -50,6 +50,18 @@ font-size: 1.3em;
 padding: 1em 0;
 }
 
+@media screen and (min-width: 1280px){
+    #main{
+        width: 80em !important;
+        margin: 0px auto !important;
+    }
+    #header{
+        width: 80em !important;
+        margin: 0px auto !important;
+    }
+
+}
+
 /* fix cover overlay, you can remove this lines if you dont use collective cover */
 #exposeMask {z-index: 0 !important;}
 .close {opacity: 0.6; text-indent: -10000px;}
