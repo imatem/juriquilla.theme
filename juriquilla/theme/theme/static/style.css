@@ -56,10 +56,12 @@ padding: 1em 0;
 
    /* for readability making the width of the site only got to 100em */
    #wrapper {
-       width: 80em !important;
+       width: 90em !important;
+       max-width: 90em;
        margin: 0px auto !important;
        display: block;
        float: none;
+       font-size: 1.3em;
    }
 
 }
