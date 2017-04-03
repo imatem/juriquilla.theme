@@ -353,3 +353,20 @@ div.galleria-thumbnails img{
     margin-top: 10%;
 }
 
+#content a.cuheader-color:visited, #content a.cuerheader-color:visited, #content a.oaxheader-color:visited{
+    color:#427597;
+}
+
+a.cuheader-color, a.cuerheader-color, a.oaxheader-color{
+    color: #427597;
+
+}
+
+#content a.jurheader-color:visited{
+  color:white;
+}
+
+a.jurheader-color{
+  color:white;
+}
+
